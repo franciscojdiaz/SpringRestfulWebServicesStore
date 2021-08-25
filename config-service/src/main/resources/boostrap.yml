@@ -1,0 +1,24 @@
+# puerto por donde escucha
+server:
+  port: 8081
+
+# mapeamos los archivo de configuracion de cada uno de los microservicios, los ubicamos en un lugar
+# donde va estar leyendo config services para exponer estas configuraciones ante un API REST.
+# creamos en el repositorio la carpeta config-data la cual tendra los archivos de configuracion.
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/franciscojdiaz/proyectostoresample.git
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+  security:
+    user:
+      name: root
+      password: s3cr3t
+
+
+
