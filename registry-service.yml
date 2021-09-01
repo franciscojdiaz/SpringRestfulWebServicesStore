@@ -1,12 +1,12 @@
 server:
   port: 8099
+  waitTimeInMsWhenSyncEmpty: 0
 
 eureka:
   instance:
     hostname: localhost
   client:
     registerWithEureka: false
-    fetchRegistry: false
-    waitTimeInMsWhenSyncEmpty: 0
+    fetchRegistry: false    
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
