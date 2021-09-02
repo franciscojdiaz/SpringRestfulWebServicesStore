@@ -5,9 +5,10 @@ eureka:
   instance:
     hostname: localhost
   client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     registerWithEureka: false
     fetchRegistry: false
     server: 
       waitTimeInMsWhenSyncEmpty: 0 
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    
